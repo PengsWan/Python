@@ -2,6 +2,7 @@ import re
 from time import sleep
 
 from playwright.sync_api import Playwright, sync_playwright, expect
+import test
 
 
 def run(playwright: Playwright) -> None:
@@ -16,7 +17,7 @@ def run(playwright: Playwright) -> None:
     # ---------------------
     context.close()
     browser.close()
-
+    test.test()
 
 with sync_playwright() as playwright:
     run(playwright)
